@@ -1,0 +1,9 @@
+.fonctionnement{
+    counter-reset: fonctionnement;
+    &__bouton{
+        &::before{
+            counter-increment: fonctionnement;
+            content: counter(fonctionnement);
+        }
+    }
+}

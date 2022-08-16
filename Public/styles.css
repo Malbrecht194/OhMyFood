@@ -1,0 +1,9 @@
+.fonctionnement {
+  counter-reset: fonctionnement;
+}
+.fonctionnement__bouton::before {
+  counter-increment: fonctionnement;
+  content: counter(fonctionnement);
+}
+
+/*# sourceMappingURL=styles.css.map */

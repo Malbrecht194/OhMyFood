@@ -14,44 +14,42 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Marge de la page -->
-    <main>
+    
         <!-- Création du header -->
         <header>
             <a href="index.html"><img src="../images/logo/ohmyfood.png" alt="Bookie" class="header__logo"></a>
             <p class="header__location"><i class="fa-solid fa-location-dot"> Paris,Belleville</i></p>
         </header>
-
+    
+    <!-- Marge de la page -->
+    <main>
         <!-- Partie recherche -->
         <section class="recherche">
             <h1 class="recherche__titre">Réservez le menu qui vous convient</h1>
             <h2 class="recherche__description">Découvrez des restaurants d'exception, séléctionnés par nos soins.</h2>
-            <button class="recherche__bouton"><a href="#restaurants">Explorer nos restaurants</a></button>
+            <a href="#restaurant" class="recherche__bouton">Explorer nos restaurants</a>
         </section>
         
         <!-- Fonctionnement -->
         <section class="fonctionnement">
             <div class="fonctionnement__bouton">  
-                <p class="fonctionnement__bouton__numero">1</p>
                 <i class="fa-solid fa-mobile-screen-button fonctionnement__bouton__icone"></i>
                 <h3 class="fonctionnement__bouton__titre">Choisissez un restaurant</h3>
             </div>
             
             <div class="fonctionnement__bouton">  
-                <p class="fonctionnement__bouton__numero">2</p>
-                <i class="fa-regular fa-bars fonctionnement__bouton__icone"></i>
+                <i class="fa-solid fa-list-ul fonctionnement__bouton__icone"></i>
                 <h3 class="fonctionnement__bouton__titre">Composer votre menu</h3>
             </div>
             
             <div class="fonctionnement__bouton">  
-                <p class="fonctionnement__bouton__numero">3</p>
-                <i class="fa-regular fa-store fonctionnement__bouton__icone"></i>
+                <i class="fa-solid fa-store fonctionnement__bouton__icone"></i>
                 <h3 class="fonctionnement__bouton__titre">Dégustez au restaurant</h3>
             </div>
         </section>
         
         <!-- Restaurants -->
-        <section class="restaurant">
+        <section class="restaurant" id="restaurant">
             <!-- Création des cartes restaurant-->
             <a href="">
                 <article class="restaurant__carte">
@@ -60,7 +58,7 @@
                     <div class="restaurant__carte__description">
                         <h3 class="restaurant__carte__description__titre">La palette du goût</h3>
                         <p class="restaurant__carte__description__lieu">Ménilmontant</p>
-                        <i class="fa-thin fa-heart restaurant__carte__description__like"></i>
+                        <i class="fa-regular fa-heart restaurant__carte__description__like"></i>
                     </div>
                 </article>
             </a>
@@ -71,7 +69,7 @@
                     <div class="restaurant__carte__description">
                         <h3 class="restaurant__carte__description__titre">La note enchantée</h3>
                         <p class="restaurant__carte__description__lieu">Charonne</p>
-                        <i class="fa-thin fa-heart restaurant__carte__description__like"></i>
+                        <i class="fa-regular fa-heart restaurant__carte__description__like"></i>
                     </div>
                 </article>
             </a>
@@ -81,7 +79,7 @@
                     <div class="restaurant__carte__description">
                         <h3 class="restaurant__carte__description__titre">À la française</h3>
                         <p class="restaurant__carte__description__lieu">Cité Rouge</p>
-                        <i class="fa-thin fa-heart restaurant__carte__description__like"></i>
+                        <i class="fa-regular fa-heart restaurant__carte__description__like"></i>
                     </div>
                 </article>
             </a>
@@ -91,7 +89,7 @@
                     <div class="restaurant__carte__description">
                         <h3 class="restaurant__carte__description__titre">Le délice des sens</h3>
                         <p class="restaurant__carte__description__lieu">Folie-Méricourt</p>
-                        <i class="fa-thin fa-heart restaurant__carte__description__like"></i>
+                        <i class="fa-regular fa-heart restaurant__carte__description__like"></i>
                     </div>
                 </article>
             </a>
