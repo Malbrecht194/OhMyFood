@@ -1,0 +1,49 @@
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin width-max{
+    width: 100%;
+}
+
+@mixin centrer {
+    margin: 0 auto 0;
+}
+
+@mixin element-rond {
+    border-radius: 30px;
+}
+
+@mixin bordure-ronde {
+    border-radius: 20px;
+}
+@mixin box-shadow {
+    box-shadow:  0 0 16px #0000002e;
+}
+
+@mixin fond-gris {
+    background-color: rgb(240, 240, 240) ;
+}
+
+@mixin body-padding {
+    padding: 0 1rem 0;
+}
+
+@mixin mobile {
+    @media screen and (max-width: map-get($breakpoints, mobile)){
+    @content;
+    }
+}
+
+@mixin tablette {
+    @media screen and (max-width: map-get($breakpoints, tablette-max)) and (min-width: map-get($breakpoints, tablette)) {
+    @content;
+    }
+}
+@mixin mobile {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
+    @content;
+    }
+}

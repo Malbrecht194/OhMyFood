@@ -1,0 +1,21 @@
+
+/*Footer*/
+.footer{
+    background-color: rgb(50, 50, 50);
+    @include flex-column();
+    row-gap: 0.5rem;
+    padding: 1.5rem;
+    &__titre{
+        color: white;
+        padding-bottom: 1rem;
+        font-size: 26px;
+    }
+    &__lien{
+        color: white;
+        display: flex;
+        column-gap: 1.5rem;
+        &__icone{
+            width: 0.5rem;
+        }
+    }
+}

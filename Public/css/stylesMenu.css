@@ -1,0 +1,157 @@
+/* --- Style de la page ---*/
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  all: unset;
+}
+
+/*Liens*/
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Header*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__logo {
+  width: 100%;
+  padding: 1.5rem 0 0.5rem;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1803921569);
+  margin-top: -1.5rem;
+}
+.header__logo-img {
+  width: 10rem;
+}
+
+/*fond image menu*/
+.background {
+  height: 15rem;
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-size: cover;
+}
+
+.menu-titre {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4rem;
+  background-color: white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 6rem;
+  margin-top: -3rem;
+}
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  margin: 2rem 1rem 0;
+}
+.carte__titre {
+  font-size: 22px;
+  font-style: "";
+}
+.carte__menu {
+  display: flex;
+  border-radius: 20px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  overflow: hidden;
+}
+.carte__menu__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /*C'est chelou mais c'est normal (bug flex)*/
+  width: 0;
+  padding: 0 0.5rem 0;
+}
+.carte__menu__container__titre {
+  font-size: 15px;
+}
+.carte__menu__container__accompagnement {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+.carte__menu__prix {
+  padding: 1rem 1rem 0;
+  font-size: 14px;
+  font-weight: bold;
+  width: 0;
+}
+.carte__menu__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  height: 100%;
+  background-color: #99e2d0;
+  color: white;
+  width: 0;
+  transition: width 0.75s;
+}
+.carte__menu:hover .carte__menu__block {
+  width: 5rem;
+}
+.carte__menu:hover .carte__menu__block__icone {
+  transform: rotate(360deg);
+  transition: transform 0.75s;
+}
+
+.commande {
+  display: flex;
+  justify-content: center;
+}
+.commande__bouton {
+  width: 10rem;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  background-image: -webkit-linear-gradient(-80deg, #FF79DA, #9356DC);
+  padding: 1rem;
+  border-radius: 30px;
+  margin: 2rem 0 5rem;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
+}
+
+/*Footer*/
+.footer {
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  padding: 1.5rem;
+}
+.footer__titre {
+  color: white;
+  padding-bottom: 1rem;
+  font-size: 26px;
+}
+.footer__lien {
+  color: white;
+  display: flex;
+  column-gap: 1.5rem;
+}
+.footer__lien__icone {
+  width: 0.5rem;
+}
+
+/*# sourceMappingURL=stylesMenu.css.map */

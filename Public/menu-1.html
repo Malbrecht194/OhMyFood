@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>OhMyFood</title>
+    <link rel="stylesheet" href="stylesbase.css">
+    <link rel="stylesheet" href="stylesMenu.css">
+    <title>Menu</title>
 
     <!-- Font-awesome -->
     <script src="https://kit.fontawesome.com/ce14341441.js" crossorigin="anonymous"></script>
@@ -18,21 +19,108 @@
     
         <!-- Création du header version menu -->
         <header>
-            <button class="header__bouton"><a href="index.html"><i class="fa-thin fa-arrow-left"></a></i></button>
-            <a href="index.html"><img src="../images/logo/ohmyfood.png" alt="Bookie" class="header__logo"></a>
+            <button class="header__bouton"><a href="index.html"><i class="fa-solid fa-arrow-left"></a></i></button>
+            <div class="header__logo"><a href="index.html" ><img src="../images/logo/ohmyfood.png" alt="ohmyfood" class="header__logo-img"></a></div>
         </header>
-    
+        <div class="background"></div>
+
     <main>
+        <h1 class="menu-titre">À la française<i class="fa-solid fa-heart menu-icon"></i></h1>
+        
+        <section class="carte">
+            <h2 class="carte__titre">Entrées</h2>
+            <!-- Création de la classe menu -->
+            <div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Tartare de poulpe acidulé</h3>
+                    <p class="carte__menu__container__accompagnement">Aux zestes d'orange</p>
+                </div>
+                <p class="carte__menu__prix">25€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div>
+            <div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Velouté de légumes d'antan</h3>
+                    <p class="carte__menu__container__accompagnement">Carotte, panais, topinambour</p>
+                </div>
+                <p class="carte__menu__prix">35€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div>
+            <div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Soupe à l'oignon</h3>
+                    <p class="carte__menu__container__accompagnement">Revisitée</p>
+                </div>
+                <p class="carte__menu__prix">20€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div>
+        </section>
+        
+        <section class="carte">
+            <h2 class="carte__titre">Plats</h2>
+            <div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Coquilles Saint-Jacques</h3>
+                    <p class="carte__menu__container__accompagnement">Accompagnées d'une purée de panais</p>
+                </div>
+                <p class="carte__menu__prix">40€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div>
+            <div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Magret de canard</h3>
+                    <p class="carte__menu__container__accompagnement">Et parmentier de pommes de terre</p>
+                </div>
+                <p class="carte__menu__prix">35€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div>
+            <div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Pigeonneau d’Ille-et-Vilaine</h3>
+                    <p class="carte__menu__container__accompagnement">Sur son lit de gnocchis aux légumes</p>
+                </div>
+                <p class="carte__menu__prix">44€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div>
+        </section>
+        
+        <section class="carte">
+            <h2 class="carte__titre">Dessert</h2>
+            <div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Pétales de violettes glacés</h3>
+                    <p class="carte__menu__container__accompagnement">Et purée de noisettes</p>
+                </div>
+                <p class="carte__menu__prix">18€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div><div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Fondant au chocolat</h3>
+                    <p class="carte__menu__container__accompagnement">Revisité</p>
+                </div>
+                <p class="carte__menu__prix">22€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div><div class="carte__menu">
+                <div class="carte__menu__container">
+                    <h3 class="carte__menu__container__titre">Millefeuille croustillant</h3>
+                    <p class="carte__menu__container__accompagnement">Myrtilles et pâte d’amande</p>
+                </div>
+                <p class="carte__menu__prix">23€</p>
+                <div class="carte__menu__block"><i class="fa-solid fa-circle-check carte__menu__block__icone"></i></div>
+            </div>
+        </section>
+
+        <div class="commande"><button type="submit" class="commande__bouton">Commander</button></div>
     </main>    
        
     <!-- Footer -->
     <footer class="footer">
-       <a href="index.html"><h3 class="footer__titre">ohmyfood</h3></a>
-       <a href="#" class="footer__lien">Proposer un restaurant</a>
-       <a href="#" class="footer__lien">Devenir partenaire</a>
-       <a href="#" class="footer__lien">Mentions légales</a>
-       <a href="#" class="footer__lien">Contact</a>
-    </footer>
+        <a href="index.html"><h3 class="footer__titre">ohmyfood</h3></a>
+        <a href="#" class="footer__lien"><i class="fa-solid fa-utensils footer__lien__icone"></i>Proposer un restaurant</a>
+        <a href="#" class="footer__lien"><i class="fa-solid fa-handshake-angle footer__lien__icone"></i>Devenir partenaire</a>
+        <a href="#" class="footer__lien">Mentions légales</a>
+        <a href="#" class="footer__lien">Contact</a>
+     </footer>
     
 </body>
 </html>
