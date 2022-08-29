@@ -7,24 +7,36 @@
 .header{
     @include flex-column();
     align-items: center;
+     
     &__logo{
+        @include width-max();
+        @include box-shadow;
         display: flex;
         justify-content: center;
-        @include width-max();
         padding: 1.5rem 0 0.5rem;
-        box-shadow:  0 5px 14px #0000002e;
+
         &-img{
-            width: 10rem;            
+            @include mobile{
+                width: 10rem;    
+            }
+            @include desktop{
+                width: 18rem;
+            }                  
         }
     }
     
     &__location{
         @include width-max();
-        font-size: 20px;
+        background-color: rgb(230, 230, 230);
         color: rgb(80, 80, 80);
         text-align: center;
         padding: 1rem 0 1rem ;
-        background-color: rgb(230, 230, 230);
+        @include mobile{           
+            font-size: 20px;
+        }
+        @include desktop{
+            font-size: 26px;
+        }
         &-logo{
             padding-right: 0.5rem
         }
@@ -33,56 +45,100 @@
 
 /*Partie recherche*/
 .recherche{
+    @include fond-gris();
     @include flex-column();
     align-items: center;
     text-align: center;
-    @include fond-gris();
     padding: 2rem 0 2rem;
     row-gap: 0.5rem;
     &__titre{
-        font-size: 26px;
-        width: 20rem;
+        @include mobile{
+            font-size: 26px;
+            width: 20rem;   
+        } 
+        @include desktop{
+            @include width-max;
+            font-size: 28px;   
+        }   
     }
     &__description{
-        font-size: 20px;
         font-weight: lighter;
-        width: 22rem;
+        @include mobile{
+            font-size: 20px;
+            width: 22rem;
+        }
+        @include desktop{
+            @include width-max;
+            font-size: 24px;
+        }
     }
     &__bouton{
-        width: 14rem;
-        font-size: 18px;
-        color: white;
-        @include centrer();
-        background-image: -webkit-linear-gradient( -80deg,#FF79DA,#9356DC );
-        padding: 1rem;
         @include element-rond();
-        margin-top: 0.5rem;
         @include box-shadow();
+        margin-top: 0.5rem;
+        color: white;
+        background-image: linear-gradient( -80deg,#FF79DA,#9356DC );
+        @include mobile{
+            width: 14rem;
+            font-size: 18px; 
+            padding: 1rem;
+        }
+        @include desktop{
+            width: 18rem;
+            font-size: 20px;
+            padding: 1.5rem;
+        }
     }
 }
-
+main{
+    max-width: 1280px;
+    margin: 0 auto 0;
+}
 /* Partie fonctionnement*/
 .fonctionnement{
     @include flex-column();
-    align-items: flex-start;
-    row-gap: 2rem;
     counter-reset: fonctionnement;
     padding: 0 2rem 0;
-    &__titre{
-        @include width-max();
+    @include mobile{
+        row-gap: 2rem;
+    }
+    @include desktop{
+        row-gap: 2rem;
+        align-items: center;
+    }
+    &__titre{ 
+        @include width-max();      
         padding: 3rem 0 1rem 0;
-        margin-left: -1rem;
-        font-size: 32px;
+        margin-left: -1rem;  
+        @include mobile{
+            font-size: 32px;   
+        }
+        @include desktop{
+            font-size: 36px;   
+        }
     }
     &__bouton{
-        display: flex;
-        align-items: center;
-        column-gap: 1rem;
         @include bordure-ronde();
         @include fond-gris();
         @include box-shadow();
-        @include width-max();
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
         padding: 1.5rem 0 1.5rem;
+        @include mobile{
+            @include width-max();
+        }
+        @include desktop{
+            width: 45rem;
+        }        
+        &__titre{
+            @include mobile{
+                font-size: 20PX;
+            }
+            @include desktop{
+                font-size: 26PX;
+            }
+        }
         &:hover{
             background-color: #9256dc1e;
         }
@@ -103,7 +159,13 @@
         }
         &__icone{
             color:rgb(80, 80, 80);
-            font-size: 22px;
+            @include mobile{
+                font-size: 22px;
+            }
+            @include desktop{
+                font-size: 26px;
+            }
+            
         }
         
         
@@ -111,29 +173,51 @@
 }
 /*Partie restaurant*/
 .restaurant{
-    margin-top: 3rem;
-    @include fond-gris();
-    @include flex-column();
+    
     @include body-padding();
+    display: flex;
+    margin-top: 3rem;
     padding-bottom: 5rem;
-    row-gap: 1.5rem;
+    @include mobile{
+        @include fond-gris();
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+    @include desktop{
+        flex-wrap: wrap;
+        justify-content: space-around;
+        row-gap: 5vw;
+    }
     &__titre{
+        @include width-max;
         padding: 2rem 0 0.5rem ;
-        font-size: 32px;
+        @include mobile{
+            font-size: 32px;
+        }
+        @include desktop{
+            font-size: 36px;
+        }       
     }
     &__carte{
         background-color: white;
-        @include flex-column();
-        @include width-max();
+        @include flex-column();      
         @include bordure-ronde();
         @include box-shadow();
-        overflow: hidden;
-        height: 20rem;
+        overflow: hidden;  
+        @include mobile{
+            @include width-max();
+            height: 20rem;
+        }
+        @include desktop{
+            width: 30rem;
+            height: 20rem;
+        }                   
         &__image{
             @include width-max();
             overflow: hidden;
-            height: 15rem;
             object-fit: cover;
+            height: 15rem;
+            
         }
         &__nouveau{
             align-self: flex-end;
@@ -146,34 +230,58 @@
         }
         &__description{
             @include width-max();
-            margin-top: 1rem;
             padding: 0 0.5rem 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
             &__container{
-                font-size: 18px;
+                @include mobile{
+                    margin-top: 1rem;
+                    font-size: 18px;
+                }
+                @include desktop{
+                    margin-top: 0.5rem;
+                    font-size: 22px;
+                }              
             }
-            &__like-rempli{
-                display: none;
-            } 
-            $like:&;
-            &__like-vide{
-                font-size: 30px;
-                margin-right: 1rem ;
-                &:hover{
-                    display: none;
-                    #{$like}__like-rempli{
-                        display: initial;
-                        background-image: linear-gradient( 0deg,#FF79DA,#9356DC ) ;
-                        -webkit-background-clip: text;
-                        background-clip:text;
+            &__like{
+                display: flex;
+                flex-wrap: nowrap;
+                &-rempli{
+                    position: relative;
+                    z-index: 0;
+                    margin-right: 1rem ;
+                    background-image: linear-gradient( 0deg,#FF79DA,#9356DC ) ;
+                    -webkit-background-clip: text;
+                    background-clip:text;
+                    color: white;
+                    @include mobile{
+                        font-size: 30px; 
+                    }
+                    @include desktop{
+                        font-size: 34px; 
+                    }
+                    &:hover{
+                        z-index: 1;
                         color: transparent;
-                        font-size: 30px;
-                        margin-right: 1rem ;
                     }
                 }
-            }
+                &-vide{
+                    position: relative;
+                    z-index: 1;
+                    @include mobile{
+                        font-size: 30px;
+                        margin-right: -30px;
+                    }
+                    @include desktop{
+                        font-size: 34px;
+                        margin-right: -34px;
+                    }
+                    &:hover{
+                        visibility: hidden;
+                    }
+                }                  
+            }         
         }
     }
 }

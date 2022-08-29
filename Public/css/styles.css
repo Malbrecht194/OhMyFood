@@ -26,22 +26,38 @@ a {
   align-items: center;
 }
 .header__logo {
+  width: 100%;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
   display: flex;
   justify-content: center;
-  width: 100%;
   padding: 1.5rem 0 0.5rem;
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1803921569);
 }
-.header__logo-img {
-  width: 10rem;
+@media screen and (max-width: 767px) {
+  .header__logo-img {
+    width: 10rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__logo-img {
+    width: 18rem;
+  }
 }
 .header__location {
   width: 100%;
-  font-size: 20px;
+  background-color: rgb(230, 230, 230);
   color: rgb(80, 80, 80);
   text-align: center;
   padding: 1rem 0 1rem;
-  background-color: rgb(230, 230, 230);
+}
+@media screen and (max-width: 767px) {
+  .header__location {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__location {
+    font-size: 26px;
+  }
 }
 .header__location-logo {
   padding-right: 0.5rem;
@@ -49,59 +65,129 @@ a {
 
 /*Partie recherche*/
 .recherche {
+  background-color: rgb(240, 240, 240);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: rgb(240, 240, 240);
   padding: 2rem 0 2rem;
   row-gap: 0.5rem;
 }
-.recherche__titre {
-  font-size: 26px;
-  width: 20rem;
+@media screen and (max-width: 767px) {
+  .recherche__titre {
+    font-size: 26px;
+    width: 20rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .recherche__titre {
+    width: 100%;
+    font-size: 28px;
+  }
 }
 .recherche__description {
-  font-size: 20px;
   font-weight: lighter;
-  width: 22rem;
+}
+@media screen and (max-width: 767px) {
+  .recherche__description {
+    font-size: 20px;
+    width: 22rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .recherche__description {
+    width: 100%;
+    font-size: 24px;
+  }
 }
 .recherche__bouton {
-  width: 14rem;
-  font-size: 18px;
-  color: white;
-  margin: 0 auto 0;
-  background-image: -webkit-linear-gradient(-80deg, #FF79DA, #9356DC);
-  padding: 1rem;
   border-radius: 30px;
-  margin-top: 0.5rem;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
+  margin-top: 0.5rem;
+  color: white;
+  background-image: linear-gradient(-80deg, #FF79DA, #9356DC);
+}
+@media screen and (max-width: 767px) {
+  .recherche__bouton {
+    width: 14rem;
+    font-size: 18px;
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .recherche__bouton {
+    width: 18rem;
+    font-size: 20px;
+    padding: 1.5rem;
+  }
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto 0;
 }
 
 /* Partie fonctionnement*/
 .fonctionnement {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  row-gap: 2rem;
   counter-reset: fonctionnement;
   padding: 0 2rem 0;
+}
+@media screen and (max-width: 767px) {
+  .fonctionnement {
+    row-gap: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement {
+    row-gap: 2rem;
+    align-items: center;
+  }
 }
 .fonctionnement__titre {
   width: 100%;
   padding: 3rem 0 1rem 0;
   margin-left: -1rem;
-  font-size: 32px;
+}
+@media screen and (max-width: 767px) {
+  .fonctionnement__titre {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement__titre {
+    font-size: 36px;
+  }
 }
 .fonctionnement__bouton {
-  display: flex;
-  align-items: center;
-  column-gap: 1rem;
   border-radius: 20px;
   background-color: rgb(240, 240, 240);
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
-  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
   padding: 1.5rem 0 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .fonctionnement__bouton {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement__bouton {
+    width: 45rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .fonctionnement__bouton__titre {
+    font-size: 20PX;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement__bouton__titre {
+    font-size: 26PX;
+  }
 }
 .fonctionnement__bouton:hover {
   background-color: rgba(146, 86, 220, 0.1176470588);
@@ -122,38 +208,78 @@ a {
 }
 .fonctionnement__bouton__icone {
   color: rgb(80, 80, 80);
-  font-size: 22px;
+}
+@media screen and (max-width: 767px) {
+  .fonctionnement__bouton__icone {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fonctionnement__bouton__icone {
+    font-size: 26px;
+  }
 }
 
 /*Partie restaurant*/
 .restaurant {
-  margin-top: 3rem;
-  background-color: rgb(240, 240, 240);
-  display: flex;
-  flex-direction: column;
   padding: 0 1rem 0;
+  display: flex;
+  margin-top: 3rem;
   padding-bottom: 5rem;
-  row-gap: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .restaurant {
+    background-color: rgb(240, 240, 240);
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurant {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 5vw;
+  }
 }
 .restaurant__titre {
+  width: 100%;
   padding: 2rem 0 0.5rem;
-  font-size: 32px;
+}
+@media screen and (max-width: 767px) {
+  .restaurant__titre {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurant__titre {
+    font-size: 36px;
+  }
 }
 .restaurant__carte {
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 100%;
   border-radius: 20px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
   overflow: hidden;
-  height: 20rem;
+}
+@media screen and (max-width: 767px) {
+  .restaurant__carte {
+    width: 100%;
+    height: 20rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurant__carte {
+    width: 30rem;
+    height: 20rem;
+  }
 }
 .restaurant__carte__image {
   width: 100%;
   overflow: hidden;
-  height: 15rem;
   object-fit: cover;
+  height: 15rem;
 }
 .restaurant__carte__nouveau {
   align-self: flex-end;
@@ -166,33 +292,68 @@ a {
 }
 .restaurant__carte__description {
   width: 100%;
-  margin-top: 1rem;
   padding: 0 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.restaurant__carte__description__container {
-  font-size: 18px;
+@media screen and (max-width: 767px) {
+  .restaurant__carte__description__container {
+    margin-top: 1rem;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurant__carte__description__container {
+    margin-top: 0.5rem;
+    font-size: 22px;
+  }
+}
+.restaurant__carte__description__like {
+  display: flex;
+  flex-wrap: nowrap;
 }
 .restaurant__carte__description__like-rempli {
-  display: none;
-}
-.restaurant__carte__description__like-vide {
-  font-size: 30px;
+  position: relative;
+  z-index: 0;
   margin-right: 1rem;
-}
-.restaurant__carte__description__like-vide:hover {
-  display: none;
-}
-.restaurant__carte__description__like-vide:hover .restaurant__carte__description__like-rempli {
-  display: initial;
   background-image: linear-gradient(0deg, #FF79DA, #9356DC);
   -webkit-background-clip: text;
   background-clip: text;
+  color: white;
+}
+@media screen and (max-width: 767px) {
+  .restaurant__carte__description__like-rempli {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurant__carte__description__like-rempli {
+    font-size: 34px;
+  }
+}
+.restaurant__carte__description__like-rempli:hover {
+  z-index: 1;
   color: transparent;
-  font-size: 30px;
-  margin-right: 1rem;
+}
+.restaurant__carte__description__like-vide {
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .restaurant__carte__description__like-vide {
+    font-size: 30px;
+    margin-right: -30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurant__carte__description__like-vide {
+    font-size: 34px;
+    margin-right: -34px;
+  }
+}
+.restaurant__carte__description__like-vide:hover {
+  visibility: hidden;
 }
 
 /*Footer*/
