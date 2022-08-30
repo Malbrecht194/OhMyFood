@@ -37,6 +37,11 @@ a {
     width: 10rem;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .header__logo-img {
+    width: 14rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   .header__logo-img {
     width: 18rem;
@@ -54,6 +59,11 @@ a {
     font-size: 20px;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .header__location {
+    font-size: 23px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .header__location {
     font-size: 26px;
@@ -68,6 +78,7 @@ a {
   background-color: rgb(240, 240, 240);
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: center;
   text-align: center;
   padding: 2rem 0 2rem;
@@ -79,9 +90,13 @@ a {
     width: 20rem;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .recherche__titre {
+    font-size: 24px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .recherche__titre {
-    width: 100%;
     font-size: 28px;
   }
 }
@@ -94,9 +109,13 @@ a {
     width: 22rem;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .recherche__description {
+    font-size: 22px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .recherche__description {
-    width: 100%;
     font-size: 24px;
   }
 }
@@ -112,6 +131,13 @@ a {
     width: 14rem;
     font-size: 18px;
     padding: 1rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .recherche__bouton {
+    width: 16rem;
+    font-size: 19px;
+    padding: 1.25rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -139,6 +165,12 @@ main {
     row-gap: 2rem;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .fonctionnement {
+    row-gap: 2rem;
+    align-items: center;
+  }
+}
 @media screen and (min-width: 1024px) {
   .fonctionnement {
     row-gap: 2rem;
@@ -153,6 +185,11 @@ main {
 @media screen and (max-width: 767px) {
   .fonctionnement__titre {
     font-size: 32px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .fonctionnement__titre {
+    font-size: 34px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -174,6 +211,11 @@ main {
     width: 100%;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .fonctionnement__bouton {
+    width: 35rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   .fonctionnement__bouton {
     width: 45rem;
@@ -182,6 +224,11 @@ main {
 @media screen and (max-width: 767px) {
   .fonctionnement__bouton__titre {
     font-size: 20PX;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .fonctionnement__bouton__titre {
+    font-size: 23PX;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -214,6 +261,11 @@ main {
     font-size: 22px;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .fonctionnement__bouton__icone {
+    font-size: 24px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .fonctionnement__bouton__icone {
     font-size: 26px;
@@ -222,23 +274,31 @@ main {
 
 /*Partie restaurant*/
 .restaurant {
-  padding: 0 1rem 0;
   display: flex;
+  flex-direction: column;
+  padding: 0 1rem 0;
+  background-color: rgb(240, 240, 240);
   margin-top: 3rem;
   padding-bottom: 5rem;
 }
 @media screen and (max-width: 767px) {
   .restaurant {
-    background-color: rgb(240, 240, 240);
-    flex-direction: column;
     row-gap: 1.5rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .restaurant {
+    flex-direction: row;
     flex-wrap: wrap;
+    background-color: white;
     justify-content: space-around;
     row-gap: 5vw;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .restaurant {
+    row-gap: 4vw;
+    padding: 0 5rem 5rem;
   }
 }
 .restaurant__titre {
@@ -250,29 +310,30 @@ main {
     font-size: 32px;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .restaurant__titre {
+    margin-left: -3.5rem;
+    font-size: 34px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .restaurant__titre {
     font-size: 36px;
   }
 }
 .restaurant__carte {
-  background-color: white;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
+  width: 100%;
+  background-color: white;
   overflow: hidden;
-}
-@media screen and (max-width: 767px) {
-  .restaurant__carte {
-    width: 100%;
-    height: 20rem;
-  }
+  height: 20rem;
 }
 @media screen and (min-width: 1024px) {
   .restaurant__carte {
     width: 30rem;
-    height: 20rem;
   }
 }
 .restaurant__carte__image {
@@ -303,6 +364,12 @@ main {
     font-size: 18px;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .restaurant__carte__description__container {
+    margin-top: 0.75rem;
+    font-size: 20px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .restaurant__carte__description__container {
     margin-top: 0.5rem;
@@ -327,6 +394,11 @@ main {
     font-size: 30px;
   }
 }
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .restaurant__carte__description__like-rempli {
+    font-size: 32px;
+  }
+}
 @media screen and (min-width: 1024px) {
   .restaurant__carte__description__like-rempli {
     font-size: 34px;
@@ -344,6 +416,12 @@ main {
   .restaurant__carte__description__like-vide {
     font-size: 30px;
     margin-right: -30px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .restaurant__carte__description__like-vide {
+    font-size: 32px;
+    margin-right: -32px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -367,12 +445,41 @@ main {
 .footer__titre {
   color: white;
   padding-bottom: 1rem;
-  font-size: 26px;
+}
+@media screen and (max-width: 767px) {
+  .footer__titre {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .footer__titre {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__titre {
+    font-size: 30px;
+  }
 }
 .footer__lien {
   color: white;
   display: flex;
   column-gap: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .footer__lien {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .footer__lien {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__lien {
+    font-size: 22px;
+  }
 }
 .footer__lien__icone {
   width: 0.5rem;

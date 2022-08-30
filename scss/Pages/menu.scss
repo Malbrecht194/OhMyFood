@@ -22,7 +22,7 @@
 /*fond image menu*/
 .background{
     height: 15rem;
-    background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+    background-image: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
     background-size: cover;
 }
 .menu-titre{
@@ -43,7 +43,6 @@
     margin: 2rem 1rem 0;
     &__titre{
         font-size: 22px;
-        font-style: to-upper-case($string: "");
     }
     &__menu{
         display: flex;
@@ -72,7 +71,7 @@
             
         }
         &__prix{
-            padding:  1rem 1rem 0 ; 
+            padding:  1rem 2.5rem 0 ; 
             font-size: 14px;
             font-weight: bold;
             width: 0;

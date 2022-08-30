@@ -38,7 +38,7 @@ a {
 /*fond image menu*/
 .background {
   height: 15rem;
-  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-image: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
   background-size: cover;
 }
 
@@ -63,7 +63,6 @@ a {
 }
 .carte__titre {
   font-size: 22px;
-  font-style: "";
 }
 .carte__menu {
   display: flex;
@@ -92,7 +91,7 @@ a {
   font-size: 14px;
 }
 .carte__menu__prix {
-  padding: 1rem 1rem 0;
+  padding: 1rem 2.5rem 0;
   font-size: 14px;
   font-weight: bold;
   width: 0;
@@ -143,12 +142,41 @@ a {
 .footer__titre {
   color: white;
   padding-bottom: 1rem;
-  font-size: 26px;
+}
+@media screen and (max-width: 767px) {
+  .footer__titre {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .footer__titre {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__titre {
+    font-size: 30px;
+  }
 }
 .footer__lien {
   color: white;
   display: flex;
   column-gap: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .footer__lien {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .footer__lien {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__lien {
+    font-size: 22px;
+  }
 }
 .footer__lien__icone {
   width: 0.5rem;

@@ -19,6 +19,9 @@
             @include mobile{
                 width: 10rem;    
             }
+            @include tablette{
+                width: 14rem;    
+            }
             @include desktop{
                 width: 18rem;
             }                  
@@ -34,6 +37,9 @@
         @include mobile{           
             font-size: 20px;
         }
+        @include tablette{           
+            font-size: 23px;
+        }
         @include desktop{
             font-size: 26px;
         }
@@ -47,6 +53,7 @@
 .recherche{
     @include fond-gris();
     @include flex-column();
+    @include width-max;
     align-items: center;
     text-align: center;
     padding: 2rem 0 2rem;
@@ -55,9 +62,11 @@
         @include mobile{
             font-size: 26px;
             width: 20rem;   
+        }
+        @include tablette{
+            font-size: 24px;   
         } 
         @include desktop{
-            @include width-max;
             font-size: 28px;   
         }   
     }
@@ -67,8 +76,10 @@
             font-size: 20px;
             width: 22rem;
         }
+        @include tablette{
+            font-size: 22px;
+        }
         @include desktop{
-            @include width-max;
             font-size: 24px;
         }
     }
@@ -82,6 +93,11 @@
             width: 14rem;
             font-size: 18px; 
             padding: 1rem;
+        }
+        @include tablette{
+            width: 16rem;
+            font-size: 19px; 
+            padding: 1.25rem;
         }
         @include desktop{
             width: 18rem;
@@ -102,6 +118,10 @@ main{
     @include mobile{
         row-gap: 2rem;
     }
+    @include tablette{
+        row-gap: 2rem;
+        align-items: center;
+    }
     @include desktop{
         row-gap: 2rem;
         align-items: center;
@@ -112,6 +132,9 @@ main{
         margin-left: -1rem;  
         @include mobile{
             font-size: 32px;   
+        }
+        @include tablette{
+            font-size: 34px;   
         }
         @include desktop{
             font-size: 36px;   
@@ -128,12 +151,18 @@ main{
         @include mobile{
             @include width-max();
         }
+        @include tablette{
+            width: 35rem;
+        }
         @include desktop{
             width: 45rem;
         }        
         &__titre{
             @include mobile{
                 font-size: 20PX;
+            }
+            @include tablette{
+                font-size: 23PX;
             }
             @include desktop{
                 font-size: 26PX;
@@ -162,6 +191,9 @@ main{
             @include mobile{
                 font-size: 22px;
             }
+            @include tablette{
+                font-size: 24px;
+            }
             @include desktop{
                 font-size: 26px;
             }
@@ -174,19 +206,24 @@ main{
 /*Partie restaurant*/
 .restaurant{
     
+    @include flex-column;
     @include body-padding();
-    display: flex;
+    @include fond-gris();
     margin-top: 3rem;
     padding-bottom: 5rem;
     @include mobile{
-        @include fond-gris();
-        flex-direction: column;
         row-gap: 1.5rem;
     }
     @include desktop{
+        flex-direction: row;
         flex-wrap: wrap;
+        background-color: white;
         justify-content: space-around;
         row-gap: 5vw;
+    }
+    @include tablette{
+        row-gap: 4vw;
+        padding: 0 5rem 5rem;
     }
     &__titre{
         @include width-max;
@@ -194,23 +231,25 @@ main{
         @include mobile{
             font-size: 32px;
         }
+        @include tablette{
+            margin-left: -3.5rem;
+            font-size: 34px;
+        }
         @include desktop{
             font-size: 36px;
         }       
     }
     &__carte{
-        background-color: white;
         @include flex-column();      
         @include bordure-ronde();
         @include box-shadow();
+        @include width-max();
+        background-color: white;
         overflow: hidden;  
-        @include mobile{
-            @include width-max();
-            height: 20rem;
-        }
+        height: 20rem;
+
         @include desktop{
             width: 30rem;
-            height: 20rem;
         }                   
         &__image{
             @include width-max();
@@ -239,6 +278,10 @@ main{
                     margin-top: 1rem;
                     font-size: 18px;
                 }
+                @include tablette{
+                    margin-top: 0.75rem;
+                    font-size: 20px;
+                }
                 @include desktop{
                     margin-top: 0.5rem;
                     font-size: 22px;
@@ -258,6 +301,9 @@ main{
                     @include mobile{
                         font-size: 30px; 
                     }
+                    @include tablette{
+                        font-size: 32px; 
+                    }
                     @include desktop{
                         font-size: 34px; 
                     }
@@ -272,6 +318,10 @@ main{
                     @include mobile{
                         font-size: 30px;
                         margin-right: -30px;
+                    }
+                    @include tablette{
+                        font-size: 32px;
+                        margin-right: -32px;
                     }
                     @include desktop{
                         font-size: 34px;
