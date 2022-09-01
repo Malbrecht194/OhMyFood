@@ -1,3 +1,14 @@
+@charset "UTF-8";
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* --- Style de la page ---*/
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -21,25 +32,142 @@ a {
 
 /*Header*/
 .header {
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .header__logo {
-  width: 100%;
-  padding: 1.5rem 0 0.5rem;
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1803921569);
-  margin-top: -1.5rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 0.5rem;
 }
-.header__logo-img {
-  width: 10rem;
+@media screen and (max-width: 767px) {
+  .header__logo {
+    margin-top: -3rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .header__logo {
+    margin-top: -3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__logo {
+    margin-top: -4rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header__logo-img {
+    width: 10rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .header__logo-img {
+    width: 14rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__logo-img {
+    width: 18rem;
+  }
+}
+.header__bouton {
+  margin: 0.5rem 0 0 1rem;
+}
+@media screen and (max-width: 767px) {
+  .header__bouton {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .header__bouton {
+    font-size: 34px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header__bouton {
+    font-size: 38px;
+  }
 }
 
 /*fond image menu*/
-.background {
-  height: 15rem;
+.background-1 {
+  background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  .background-1 {
+    height: 15rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .background-1 {
+    height: 28rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .background-1 {
+    height: 35rem;
+  }
+}
+
+.background-2 {
+  background-image: url(../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  .background-2 {
+    height: 15rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .background-2 {
+    height: 28rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .background-2 {
+    height: 35rem;
+  }
+}
+
+.background-3 {
   background-image: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
   background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  .background-3 {
+    height: 15rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .background-3 {
+    height: 28rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .background-3 {
+    height: 35rem;
+  }
+}
+
+.background-4 {
+  background-image: url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  background-size: cover;
+}
+@media screen and (max-width: 767px) {
+  .background-4 {
+    height: 15rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .background-4 {
+    height: 28rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .background-4 {
+    height: 35rem;
+  }
 }
 
 .menu-titre {
@@ -47,12 +175,80 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Shrikhand";
   column-gap: 4rem;
   background-color: white;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   height: 6rem;
   margin-top: -3rem;
+}
+.menu-titre__like {
+  display: flex;
+}
+.menu-titre__like-vide {
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .menu-titre__like-vide {
+    font-size: 29px;
+    margin-right: -29px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .menu-titre__like-vide {
+    font-size: 31px;
+    margin-right: -31px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu-titre__like-vide {
+    font-size: 33px;
+    margin-right: -33px;
+  }
+}
+.menu-titre__like-vide:hover {
+  visibility: hidden;
+}
+.menu-titre__like-rempli {
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  background-image: linear-gradient(0deg, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: white;
+}
+@media screen and (max-width: 767px) {
+  .menu-titre__like-rempli {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .menu-titre__like-rempli {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu-titre__like-rempli {
+    font-size: 34px;
+  }
+}
+.menu-titre__like-rempli:hover {
+  z-index: 1;
+  color: transparent;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto 0;
+}
+@media screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .carte {
@@ -61,17 +257,53 @@ a {
   row-gap: 2rem;
   margin: 2rem 1rem 0;
 }
+@media screen and (min-width: 1024px) {
+  .carte {
+    margin: 2rem 0 0;
+  }
+}
 .carte__titre {
+  text-transform: uppercase;
   font-size: 22px;
+  font-weight: bold;
+  color: rgb(80, 80, 80);
+  /*Important, a réutiliser*/
+}
+.carte__titre::after {
+  display: block;
+  content: "";
+  border-bottom: solid #99E2D0;
+  width: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  .carte__titre {
+    width: 21rem;
+  }
 }
 .carte__menu {
-  display: flex;
   border-radius: 20px;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
+  display: flex;
   align-items: center;
   justify-content: space-between;
   height: 5rem;
   overflow: hidden;
+}
+.carte__menu:nth-of-type(1) {
+  /*Important: Mettre des espaces entres les opérations*/
+  animation: 1200ms 0s both slideup;
+}
+.carte__menu:nth-of-type(2) {
+  /*Important: Mettre des espaces entres les opérations*/
+  animation: 1200ms 0.25s both slideup;
+}
+.carte__menu:nth-of-type(3) {
+  /*Important: Mettre des espaces entres les opérations*/
+  animation: 1200ms 0.5s both slideup;
+}
+.carte__menu:nth-of-type(4) {
+  /*Important: Mettre des espaces entres les opérations*/
+  animation: 1200ms 0.75s both slideup;
 }
 .carte__menu__container {
   display: flex;
@@ -82,7 +314,15 @@ a {
   padding: 0 0.5rem 0;
 }
 .carte__menu__container__titre {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: 15px;
+}
+@media screen and (min-width: 1024px) {
+  .carte__menu__container__titre {
+    font-size: 13px;
+  }
 }
 .carte__menu__container__accompagnement {
   overflow: hidden;
@@ -90,11 +330,21 @@ a {
   text-overflow: ellipsis;
   font-size: 14px;
 }
+@media screen and (min-width: 1024px) {
+  .carte__menu__container__accompagnement {
+    font-size: 12px;
+  }
+}
 .carte__menu__prix {
   padding: 1rem 2.5rem 0;
   font-size: 14px;
   font-weight: bold;
   width: 0;
+}
+@media screen and (min-width: 1024px) {
+  .carte__menu__prix {
+    font-size: 12px;
+  }
 }
 .carte__menu__block {
   display: flex;
@@ -120,6 +370,7 @@ a {
   justify-content: center;
 }
 .commande__bouton {
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
   width: 10rem;
   font-size: 18px;
   text-align: center;
@@ -128,34 +379,45 @@ a {
   padding: 1rem;
   border-radius: 30px;
   margin: 2rem 0 5rem;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
+  cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+  .commande__bouton {
+    margin: 5rem 0 5rem;
+  }
 }
 
 /*Footer*/
-.footer {
+footer {
   background-color: rgb(50, 50, 50);
+}
+
+.footer {
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
   padding: 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto 0;
 }
 .footer__titre {
-  color: white;
   padding-bottom: 1rem;
+  color: white;
+  font-family: "Shrikhand";
 }
 @media screen and (max-width: 767px) {
   .footer__titre {
-    font-size: 26px;
+    font-size: 32px;
   }
 }
 @media screen and (max-width: 1023px) and (min-width: 768px) {
   .footer__titre {
-    font-size: 28px;
+    font-size: 34px;
   }
 }
 @media screen and (min-width: 1024px) {
   .footer__titre {
-    font-size: 30px;
+    font-size: 36px;
   }
 }
 .footer__lien {

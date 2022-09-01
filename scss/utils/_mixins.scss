@@ -31,6 +31,11 @@
     padding: 0 1rem 0;
 }
 
+@mixin text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 @mixin mobile {
     @media screen and (max-width: map-get($breakpoints, mobile)){
     @content;
@@ -46,4 +51,75 @@
     @media screen and (min-width: map-get($breakpoints, desktop)){
     @content;
     }
+}
+
+@mixin coeur-rempli {
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    background-image: linear-gradient( 0deg,#FF79DA,#9356DC ) ;
+    -webkit-background-clip: text;
+    background-clip:text;
+    color: white;
+    @include mobile{
+        font-size: 30px; 
+    }
+    @include tablette{
+        font-size: 32px; 
+    }
+    @include desktop{
+        font-size: 34px; 
+    }
+    &:hover{
+        z-index: 1;
+        color: transparent;
+    }
+}
+
+@mixin fond-image {
+    background-size: cover;
+    @include mobile{
+        height: 15rem;
+    }
+    @include tablette{
+        height: 28rem;
+    }
+    @include desktop{
+        height: 35rem;
+    }
+}
+
+@mixin coeur-vide {
+    position: relative;
+    z-index: 1;
+    @include mobile{
+        font-size: 29px;
+        margin-right: -29px;
+    }
+    @include tablette{
+        font-size: 31px;
+        margin-right: -31px;
+    }
+    @include desktop{
+        font-size: 33px;
+        margin-right: -33px;
+    }
+    &:hover{
+        visibility: hidden;
+    }
+}
+
+@keyframes slideup{
+    from{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@mixin slideup ($delay) {
+    animation:  1200ms $delay both slideup;   
 }

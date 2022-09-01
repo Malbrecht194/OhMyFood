@@ -1,21 +1,26 @@
 
 /*Footer*/
-.footer{
+footer{
     background-color: rgb(50, 50, 50);
+}
+.footer{ 
     @include flex-column();
     row-gap: 0.5rem;
     padding: 1.5rem;
+    max-width: 1280px;
+    margin: 0 auto 0;
     &__titre{
-        color: white;
         padding-bottom: 1rem;
+        color: white;
+        font-family: 'Shrikhand';
         @include mobile{
-            font-size: 26px;
+            font-size: 32px;
         }
         @include tablette{
-            font-size: 28px;
+            font-size: 34px;
         }
         @include desktop{
-            font-size: 30px;
+            font-size: 36px;
         }
         
     }

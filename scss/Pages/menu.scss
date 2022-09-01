@@ -4,54 +4,137 @@
 
 /*Header*/
 .header{
+    @include box-shadow;
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &__logo{           
-        @include width-max();
-        padding: 1.5rem 0 0.5rem;
-        box-shadow:  0 5px 14px #0000002e;
-        margin-top: -1.5rem;
-        &-img{
-            width: 10rem;            
+    &__logo{
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0 0.5rem;
+        @include mobile{
+            margin-top: -3rem;   
         }
+        @include tablette{
+            margin-top: -3rem;
+        }
+        @include desktop{
+            margin-top: -4rem;
+        }
+       
+        &-img{
+            @include mobile{
+                width: 10rem;
+            }
+            @include tablette{
+                width: 14rem;    
+            }
+            @include desktop{
+                width: 18rem;
+            }                    
+        }
+    }
+    &__bouton{
+        margin: 0.5rem 0 0 1rem;
+        @include mobile{
+            font-size: 30px;
+        }
+        @include tablette{
+            font-size: 34px;
+        }
+        @include desktop{      
+            font-size: 38px;
+        }
+        
     }
 
 }
 /*fond image menu*/
-.background{
-    height: 15rem;
-    background-image: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-    background-size: cover;
+.background-1{
+    background-image: url(../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    @include fond-image;
 }
+.background-2{
+    background-image: url(../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+    @include fond-image;
+}
+.background-3{
+    background-image: url(../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+    @include fond-image;
+}
+.background-4{
+    background-image: url(../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+    @include fond-image;
+}
+
 .menu-titre{
     @include width-max();
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Shrikhand';
     column-gap: 4rem;
     background-color: white;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     height: 6rem;
     margin-top: -3rem;
+    &__like{
+        display: flex;
+        &-vide{
+            @include coeur-vide;
+        }
+        &-rempli{
+            @include coeur-rempli;
+        }
+    }
+}   
+
+
+main{
+    max-width: 1280px;
+    margin: 0 auto 0;
+    @include desktop{
+        display: flex;
+        justify-content: space-around;
+    }
+    
 }
 .carte{
     @include flex-column();
     row-gap: 2rem;
     margin: 2rem 1rem 0;
+    @include desktop{
+        margin: 2rem 0 0;
+    }
     &__titre{
+        text-transform: uppercase;
         font-size: 22px;
+        font-weight: bold;       
+        color: map-get($map: $couleurs, $key:gris-fonce );
+        /*Important, a réutiliser*/
+        &::after{
+            display: block;
+            content: "";
+            border-bottom: solid map-get($map: $couleurs, $key:vert-clair ) ;
+            width: 2rem;
+        }
+        @include desktop{
+            width: 21rem;
+        }
     }
     &__menu{
-        display: flex;
         @include bordure-ronde();
         @include box-shadow();
+        display: flex;
         align-items: center;
         justify-content: space-between;
         height: 5rem;
         overflow: hidden;
+        @for $i from 1 to 5 {     
+            &:nth-of-type(#{$i}){
+                /*Important: Mettre des espaces entres les opérations*/
+                @include slideup(($i - 1) * 0.25s);
+            }
+        }
         
         &__container{
             @include flex-column();
@@ -60,13 +143,18 @@
             width: 0;
             padding: 0 0.5rem 0;
             &__titre{
+                @include text-ellipsis;
                 font-size: 15px;
+                @include desktop{
+                    font-size: 13px;
+                }
             }
             &__accompagnement{
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
+                @include text-ellipsis;
                 font-size: 14px;
+                @include desktop{
+                    font-size: 12px;
+                }
             }
             
         }
@@ -75,6 +163,9 @@
             font-size: 14px;
             font-weight: bold;
             width: 0;
+            @include desktop{
+                font-size: 12px;
+            }
         }
         &__block{
             display: flex;
@@ -105,6 +196,7 @@
     display: flex;
     justify-content: center;
     &__bouton {
+        @include box-shadow;
         width: 10rem;
         font-size: 18px;
         text-align: center;
@@ -113,7 +205,10 @@
         padding: 1rem;
         border-radius: 30px;
         margin: 2rem 0 5rem;
-        box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
+        cursor: pointer;
+        @include desktop{
+            margin: 5rem 0 5rem;
         }
+    }
 }
 @import "../layouts/footer";
