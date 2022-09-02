@@ -1,13 +1,3 @@
-@keyframes slideup {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* --- Style de la page ---*/
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -27,6 +17,87 @@ button {
 a {
   text-decoration: none;
   color: black;
+}
+
+:root {
+  --rose: #FF79DA;
+  --mauve: #9356DC;
+  --vert-clair:#99E2D0;
+  --gris-fonce: rgb(80, 80, 80);
+  --gris-clair: rgb(230, 230, 230);
+}
+
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes disparition {
+  from {
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes loading {
+  0% {
+    margin-top: 16px;
+    height: 94px;
+  }
+  50%, 100% {
+    margin-top: 32px;
+    height: 64px;
+  }
+}
+/*Loader*/
+@keyframes disparition {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  animation: disparition both;
+  animation-delay: 3.75s;
+}
+.loading__container {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+  height: 130px;
+}
+.loading__container__item {
+  width: 25px;
+  animation: loading 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite both;
+}
+.loading__container-1 {
+  background: #9356DC;
+  animation-delay: -0.24s;
+}
+.loading__container-2 {
+  background: #FF79DA;
+  animation-delay: -0.12s;
+}
+.loading__container-3 {
+  background: #99E2D0;
+  animation-delay: 0;
 }
 
 /*Header*/
@@ -135,6 +206,7 @@ a {
   margin-top: 0.5rem;
   color: white;
   background-image: linear-gradient(175deg, #FF79DA, #9356DC);
+  transition: 0.2s ease-in-out;
 }
 @media screen and (max-width: 767px) {
   .recherche__bouton {
@@ -156,6 +228,10 @@ a {
     font-size: 20px;
     padding: 1.5rem;
   }
+}
+.recherche__bouton:hover {
+  filter: brightness(1.1);
+  box-shadow: rgba(13, 13, 14, 0.1803921569) 0px 30px 50px -14px, rgba(0, 0, 0, 0.1803921569) 0px 18px 32px -20px;
 }
 
 main {
@@ -352,8 +428,8 @@ main {
 .restaurant__carte__nouveau {
   align-self: flex-end;
   padding: 0.5rem;
-  background-color: rgb(153, 226, 208);
-  color: rgb(0, 135, 102);
+  background-color: #99E2D0;
+  color: #008766;
   font-weight: bold;
   border-radius: 5px;
   margin: -14rem 1rem 11.5rem 0;

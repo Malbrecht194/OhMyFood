@@ -1,8 +1,54 @@
+@import "../base/base";
 @import "../utils/variables";
 @import "../utils/mixins";
-@import "../base/base";
+@import "../utils/animations";
 
 
+/*Loader*/
+@keyframes disparition{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    animation: disparition both;
+    animation-delay: 3.75s;
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        width: 130px;
+        height: 130px;
+        &__item{
+            width: 25px;
+            animation: loading 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite both;
+        }
+        &-1{
+            background: map-get($map: $couleurs, $key:mauve );
+            animation-delay: -0.24s;
+        }
+        &-2{
+            background: map-get($map: $couleurs, $key:rose );
+            animation-delay: -0.12s;
+        }
+        &-3{
+            background: map-get($map: $couleurs, $key:vert-clair );
+            animation-delay: 0;
+        }
+    }
+}
 /*Header*/
 .header{
     @include flex-column();
@@ -30,8 +76,8 @@
     
     &__location{
         @include width-max();
-        background-color: rgb(230, 230, 230);
-        color: rgb(80, 80, 80);
+        background-color: map-get($map:$couleurs, $key:gris-clair );
+        color: map-get($map: $couleurs, $key:gris-fonce );
         text-align: center;
         padding: 1rem 0 1rem ;
         @include mobile{           
@@ -89,6 +135,7 @@
         margin-top: 0.5rem;
         color: white;
         background-image: linear-gradient( 175deg,#FF79DA,#9356DC );
+        transition: 0.2s ease-in-out;
         @include mobile{
             width: 14rem;
             font-size: 18px; 
@@ -103,6 +150,9 @@
             width: 18rem;
             font-size: 20px;
             padding: 1.5rem;
+        }
+        &:hover{
+            @include ombre-survol;
         }
     }
 }
@@ -171,7 +221,7 @@ main{
             background-color: #9256dc1e;
         }
         &:hover > &__icone {
-            color: #9356DC;
+            color: map-get($map: $couleurs, $key:mauve );
         }
             
         &::before{
@@ -180,7 +230,7 @@ main{
             text-align: center;
             width: 2rem;
             padding: 0.4rem;
-            background-color: #9356DC;
+            background-color: map-get($map: $couleurs, $key:mauve );
             color: white;
             border-radius: 50%;
             margin-left: -1rem;
@@ -260,8 +310,8 @@ main{
         &__nouveau{
             align-self: flex-end;
             padding: 0.5rem;
-            background-color: rgb(153, 226, 208);
-            color: rgb(0, 135, 102);
+            background-color: map-get($map: $couleurs, $key:vert-clair );
+            color: #008766;
             font-weight: bold;
             border-radius: 5px;
             margin: -14rem 1rem 11.5rem 0;

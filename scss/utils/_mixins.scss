@@ -36,6 +36,8 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+
 @mixin mobile {
     @media screen and (max-width: map-get($breakpoints, mobile)){
     @content;
@@ -51,6 +53,11 @@
     @media screen and (min-width: map-get($breakpoints, desktop)){
     @content;
     }
+}
+
+@mixin ombre-survol {
+    filter: brightness(1.1);
+    box-shadow: #0d0d0e2e 0px 30px 50px -14px, #0000002e 0px 18px 32px -20px;
 }
 
 @mixin coeur-rempli {
@@ -109,17 +116,7 @@
     }
 }
 
-@keyframes slideup{
-    from{
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @mixin slideup ($delay) {
     animation:  1200ms $delay both slideup;   
 }
+

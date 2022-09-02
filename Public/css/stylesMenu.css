@@ -1,14 +1,4 @@
 @charset "UTF-8";
-@keyframes slideup {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* --- Style de la page ---*/
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -30,6 +20,42 @@ a {
   color: black;
 }
 
+:root {
+  --rose: #FF79DA;
+  --mauve: #9356DC;
+  --vert-clair:#99E2D0;
+  --gris-fonce: rgb(80, 80, 80);
+  --gris-clair: rgb(230, 230, 230);
+}
+
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes disparition {
+  from {
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes loading {
+  0% {
+    margin-top: 16px;
+    height: 94px;
+  }
+  50%, 100% {
+    margin-top: 32px;
+    height: 64px;
+  }
+}
 /*Header*/
 .header {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
@@ -352,7 +378,7 @@ main {
   justify-content: center;
   font-size: 26px;
   height: 100%;
-  background-color: #99e2d0;
+  background-color: #99E2D0;
   color: white;
   width: 0;
   transition: width 0.75s;
@@ -380,11 +406,16 @@ main {
   border-radius: 30px;
   margin: 2rem 0 5rem;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 @media screen and (min-width: 1024px) {
   .commande__bouton {
     margin: 5rem 0 5rem;
   }
+}
+.commande__bouton:hover {
+  filter: brightness(1.1);
+  box-shadow: rgba(13, 13, 14, 0.1803921569) 0px 30px 50px -14px, rgba(0, 0, 0, 0.1803921569) 0px 18px 32px -20px;
 }
 
 /*Footer*/

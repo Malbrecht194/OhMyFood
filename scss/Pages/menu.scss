@@ -1,6 +1,7 @@
+@import "../base/base";
 @import "../utils/variables";
 @import "../utils/mixins";
-@import "../base/base";
+@import "../utils/animations";
 
 /*Header*/
 .header{
@@ -173,7 +174,7 @@ main{
             justify-content: center;
             font-size: 26px;
             height: 100%;
-            background-color: #99e2d0;
+            background-color: map-get($map: $couleurs, $key:vert-clair );
             color: white;
             width: 0;
             transition: width 0.75s;
@@ -206,8 +207,12 @@ main{
         border-radius: 30px;
         margin: 2rem 0 5rem;
         cursor: pointer;
+        transition: 0.2s ease-in-out;
         @include desktop{
             margin: 5rem 0 5rem;
+        }
+        &:hover{
+            @include ombre-survol;
         }
     }
 }

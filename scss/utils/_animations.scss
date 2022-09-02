@@ -1,0 +1,28 @@
+@keyframes slideup{
+    from{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes disparition{
+    from{
+        opacity: 1;
+    }
+    to{
+        visibility: hidden;
+    }
+}
+@keyframes loading{
+    0% {
+        margin-top: 16px;
+        height: 94px;
+    }
+    50%, 100% {
+        margin-top: 32px;
+        height: 64px;
+    }
+}
