@@ -176,13 +176,14 @@ main{
             height: 100%;
             background-color: map-get($map: $couleurs, $key:vert-clair );
             color: white;
-            width: 0;
-            transition: width 0.75s;
+            width: 5rem;
+            margin-right: -5rem;
+            transition: margin 0.75s;
         }
         $this:&;
         &:hover{
             #{$this}__block{
-                width: 5rem;
+                margin: 0;
                 &__icone{
                     transform: rotate(360deg);
                     transition: transform 0.75s ;
