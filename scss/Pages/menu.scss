@@ -169,10 +169,9 @@ main{
             
         }
         &__prix{
-            padding:  1rem 2.5rem 0 ; 
+            padding:  1rem 1rem 0 ; 
             font-size: 14px;
             font-weight: bold;
-            width: 0;
             @include desktop{
                 font-size: 12px;
             }

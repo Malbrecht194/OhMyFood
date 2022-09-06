@@ -368,10 +368,9 @@ main {
   }
 }
 .carte__menu__prix {
-  padding: 1rem 2.5rem 0;
+  padding: 1rem 1rem 0;
   font-size: 14px;
   font-weight: bold;
-  width: 0;
 }
 @media screen and (min-width: 1024px) {
   .carte__menu__prix {
