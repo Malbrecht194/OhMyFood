@@ -34,18 +34,13 @@
         &__item{
             width: 25px;
             animation: loading 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite both;
-        }
-        &-1{
-            background: map-get($map: $couleurs, $key:mauve );
-            animation-delay: -0.24s;
-        }
-        &-2{
-            background: map-get($map: $couleurs, $key:rose );
-            animation-delay: -0.12s;
-        }
-        &-3{
-            background: map-get($map: $couleurs, $key:vert-clair );
-            animation-delay: 0;
+            $colors:(mauve, rose, vert-clair);
+            @for $i from 1 to 4 {
+                &:nth-of-type(#{$i}){
+                    animation-delay: ($i - 1) * 120ms;
+                    background: map-get($map: $couleurs, $key:nth($colors,$i));
+                }
+            }
         }
     }
 }
@@ -130,29 +125,16 @@
         }
     }
     &__bouton{
-        @include element-rond();
-        @include box-shadow();
-        margin-top: 0.5rem;
-        color: white;
-        background-image: linear-gradient( 175deg,#FF79DA,#9356DC );
-        transition: 0.2s ease-in-out;
+        @include btn-gradient;
         @include mobile{
+            font-size: 16px;
             width: 14rem;
-            font-size: 18px; 
-            padding: 1rem;
         }
         @include tablette{
-            width: 16rem;
-            font-size: 19px; 
-            padding: 1.25rem;
+            width: 16rem; 
         }
         @include desktop{
             width: 18rem;
-            font-size: 20px;
-            padding: 1.5rem;
-        }
-        &:hover{
-            @include ombre-survol;
         }
     }
 }
@@ -208,13 +190,13 @@ main{
         }        
         &__titre{
             @include mobile{
-                font-size: 20PX;
+                font-size: 20px;
             }
             @include tablette{
-                font-size: 23PX;
+                font-size: 23px;
             }
             @include desktop{
-                font-size: 20PX;
+                font-size: 20px;
             }
         }
         &:hover{
@@ -293,6 +275,7 @@ main{
         @include bordure-ronde();
         @include box-shadow();
         @include width-max();
+        position: relative;
         background-color: white;
         overflow: hidden;  
         height: 20rem;
@@ -308,13 +291,14 @@ main{
             
         }
         &__nouveau{
-            align-self: flex-end;
+            position: absolute;
             padding: 0.5rem;
             background-color: map-get($map: $couleurs, $key:vert-clair );
             color: #008766;
             font-weight: bold;
             border-radius: 5px;
-            margin: -14rem 1rem 11.5rem 0;
+            top: 1rem;
+            right: 1rem;
         }
         &__description{
             @include width-max();
@@ -337,15 +321,7 @@ main{
                 }              
             }
             &__like{
-                display: flex;
-                flex-wrap: nowrap;
-                &-rempli{
-                    margin-right: 1rem ;
-                    @include coeur-rempli;
-                }
-                &-vide{
-                    @include coeur-vide;
-                }                  
+                @include coeur-like;                
             }         
         }
     }

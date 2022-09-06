@@ -52,26 +52,12 @@ a {
 .header {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
   display: flex;
+  position: relative;
 }
 .header__logo {
   display: flex;
   justify-content: center;
   padding: 1rem 0 0.5rem;
-}
-@media screen and (max-width: 767px) {
-  .header__logo {
-    margin-top: -3rem;
-  }
-}
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-  .header__logo {
-    margin-top: -3rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .header__logo {
-    margin-top: -4rem;
-  }
 }
 @media screen and (max-width: 767px) {
   .header__logo-img {
@@ -89,7 +75,10 @@ a {
   }
 }
 .header__bouton {
+  position: absolute;
   margin: 0.5rem 0 0 1rem;
+  top: 0;
+  left: 0;
 }
 @media screen and (max-width: 767px) {
   .header__bouton {
@@ -108,82 +97,21 @@ a {
 }
 
 /*fond image menu*/
-.background-1 {
-  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+.background {
   background-size: cover;
 }
 @media screen and (max-width: 767px) {
-  .background-1 {
+  .background {
     height: 15rem;
   }
 }
 @media screen and (max-width: 1023px) and (min-width: 768px) {
-  .background-1 {
+  .background {
     height: 28rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .background-1 {
-    height: 35rem;
-  }
-}
-
-.background-2 {
-  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-  background-size: cover;
-}
-@media screen and (max-width: 767px) {
-  .background-2 {
-    height: 15rem;
-  }
-}
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-  .background-2 {
-    height: 28rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .background-2 {
-    height: 35rem;
-  }
-}
-
-.background-3 {
-  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-  background-size: cover;
-}
-@media screen and (max-width: 767px) {
-  .background-3 {
-    height: 15rem;
-  }
-}
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-  .background-3 {
-    height: 28rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .background-3 {
-    height: 35rem;
-  }
-}
-
-.background-4 {
-  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-  background-size: cover;
-}
-@media screen and (max-width: 767px) {
-  .background-4 {
-    height: 15rem;
-  }
-}
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-  .background-4 {
-    height: 28rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .background-4 {
+  .background {
     height: 35rem;
   }
 }
@@ -203,58 +131,37 @@ a {
 }
 .menu-titre__like {
   display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
 }
 .menu-titre__like-vide {
-  position: relative;
-  z-index: 1;
-}
-@media screen and (max-width: 767px) {
-  .menu-titre__like-vide {
-    font-size: 29px;
-    margin-right: -29px;
-  }
-}
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-  .menu-titre__like-vide {
-    font-size: 31px;
-    margin-right: -31px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .menu-titre__like-vide {
-    font-size: 33px;
-    margin-right: -33px;
-  }
-}
-.menu-titre__like-vide:hover {
-  visibility: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 32px;
 }
 .menu-titre__like-rempli {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   cursor: pointer;
-  position: relative;
-  z-index: 0;
   background-image: linear-gradient(0deg, #FF79DA, #9356DC);
   -webkit-background-clip: text;
   background-clip: text;
   color: white;
+  font-size: 32px;
 }
-@media screen and (max-width: 767px) {
-  .menu-titre__like-rempli {
-    font-size: 30px;
-  }
+.menu-titre__like:hover .menu-titre__like-vide {
+  visibility: hidden;
 }
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-  .menu-titre__like-rempli {
-    font-size: 32px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .menu-titre__like-rempli {
-    font-size: 34px;
-  }
-}
-.menu-titre__like-rempli:hover {
-  z-index: 1;
+.menu-titre__like:hover .menu-titre__like-rempli {
+  display: inline;
   color: transparent;
 }
 
@@ -402,26 +309,50 @@ main {
   justify-content: center;
 }
 .commande__bouton {
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
-  width: 10rem;
-  font-size: 18px;
-  text-align: center;
-  color: white;
-  background-image: -webkit-linear-gradient(-80deg, #FF79DA, #9356DC);
-  padding: 1rem;
   border-radius: 30px;
-  margin: 2rem 0 5rem;
-  cursor: pointer;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.1803921569);
+  margin-top: 0.5rem;
+  color: white;
+  background-image: linear-gradient(175deg, #FF79DA, #9356DC);
   transition: 0.2s ease-in-out;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 5rem 0 5rem;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .commande__bouton {
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .commande__bouton {
+    padding: 1.25rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   .commande__bouton {
-    margin: 5rem 0 5rem;
+    padding: 1.5rem;
   }
 }
 .commande__bouton:hover {
   filter: brightness(1.1);
   box-shadow: rgba(13, 13, 14, 0.1803921569) 0px 30px 50px -14px, rgba(0, 0, 0, 0.1803921569) 0px 18px 32px -20px;
+}
+@media screen and (max-width: 767px) {
+  .commande__bouton {
+    width: 10rem;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .commande__bouton {
+    width: 12rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .commande__bouton {
+    width: 14rem;
+  }
 }
 
 /*Footer*/

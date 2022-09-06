@@ -7,19 +7,11 @@
 .header{
     @include box-shadow;
     display: flex;
+    position: relative;
     &__logo{
         display: flex;
         justify-content: center;
         padding: 1rem 0 0.5rem;
-        @include mobile{
-            margin-top: -3rem;   
-        }
-        @include tablette{
-            margin-top: -3rem;
-        }
-        @include desktop{
-            margin-top: -4rem;
-        }
        
         &-img{
             @include mobile{
@@ -34,7 +26,10 @@
         }
     }
     &__bouton{
+        position: absolute;
         margin: 0.5rem 0 0 1rem;
+        top: 0;
+        left: 0;
         @include mobile{
             font-size: 30px;
         }
@@ -49,22 +44,10 @@
 
 }
 /*fond image menu*/
-.background-1{
-    background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+.background {
     @include fond-image;
 }
-.background-2{
-    background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-    @include fond-image;
-}
-.background-3{
-    background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-    @include fond-image;
-}
-.background-4{
-    background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-    @include fond-image;
-}
+
 
 .menu-titre{
     @include width-max();
@@ -79,13 +62,7 @@
     height: 6rem;
     margin-top: -3rem;
     &__like{
-        display: flex;
-        &-vide{
-            @include coeur-vide;
-        }
-        &-rempli{
-            @include coeur-rempli;
-        }
+        @include coeur-like;
     }
 }
 .menu-titre h1{
@@ -206,22 +183,17 @@ main{
     display: flex;
     justify-content: center;
     &__bouton {
-        @include box-shadow;
-        width: 10rem;
-        font-size: 18px;
+        @include btn-gradient;
+        margin: 5rem 0 5rem;
         text-align: center;
-        color: white;
-        background-image: -webkit-linear-gradient(-80deg, #FF79DA, #9356DC);
-        padding: 1rem;
-        border-radius: 30px;
-        margin: 2rem 0 5rem;
-        cursor: pointer;
-        transition: 0.2s ease-in-out;
-        @include desktop{
-            margin: 5rem 0 5rem;
+        @include mobile{
+            width: 10rem;
         }
-        &:hover{
-            @include ombre-survol;
+        @include tablette{
+            width: 12rem; 
+        }
+        @include desktop{
+            width: 14rem;
         }
     }
 }

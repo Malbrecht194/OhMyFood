@@ -60,28 +60,6 @@
     box-shadow: #0d0d0e2e 0px 30px 50px -14px, #0000002e 0px 18px 32px -20px;
 }
 
-@mixin coeur-rempli {
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    background-image: linear-gradient( 0deg,#FF79DA,#9356DC ) ;
-    -webkit-background-clip: text;
-    background-clip:text;
-    color: white;
-    @include mobile{
-        font-size: 30px; 
-    }
-    @include tablette{
-        font-size: 32px; 
-    }
-    @include desktop{
-        font-size: 34px; 
-    }
-    &:hover{
-        z-index: 1;
-        color: transparent;
-    }
-}
 
 @mixin fond-image {
     background-size: cover;
@@ -96,27 +74,76 @@
     }
 }
 
-@mixin coeur-vide {
-    position: relative;
-    z-index: 1;
-    @include mobile{
-        font-size: 29px;
-        margin-right: -29px;
-    }
-    @include tablette{
-        font-size: 31px;
-        margin-right: -31px;
-    }
-    @include desktop{
-        font-size: 33px;
-        margin-right: -33px;
-    }
-    &:hover{
-        visibility: hidden;
-    }
-}
 
 @mixin slideup ($delay) {
     animation:  1200ms $delay both slideup;   
+}
+
+@mixin btn-gradient{
+    @include element-rond();
+    @include box-shadow();
+    margin-top: 0.5rem;
+    color: white;
+    background-image: linear-gradient( 175deg,#FF79DA,#9356DC );
+    transition: 0.2s ease-in-out;
+    font-size: 20px;
+    cursor: pointer;
+    @include mobile{
+        padding: 1rem;
+    }
+    @include tablette{
+        padding: 1.25rem;
+    }
+    @include desktop{
+        padding: 1.5rem;
+    }
+    &:hover{
+        @include ombre-survol;
+    }
+}
+
+@mixin coeur-like{
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin-right: 1rem;
+    
+    &-vide{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        font-size: 32px;
+        
+    }
+    &-rempli{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        background-image: linear-gradient( 0deg,#FF79DA,#9356DC ) ;
+        -webkit-background-clip: text;
+        background-clip:text;
+        color: white;
+        font-size: 32px;
+        
+    }
+    $like:&;
+    &:hover {
+        #{$like}{
+            &-vide{
+                visibility: hidden;
+            }
+            &-rempli{
+                display: inline;
+                color: transparent;
+            }
+        }
+
+    }
 }
 
